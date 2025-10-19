@@ -1,0 +1,38 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Site Habits tp</title>
+</head>
+<body>
+    <header>
+            <nav>
+        <ul>
+            <li><a href="">liste</a></li>
+            <li><a href="">ajout</a></li>
+        </ul>
+    </nav>
+   <img src="../static/img/logo/1.png" alt="Logo">
+    </header>
+
+    <main>
+   <div>
+    {{range .}}
+   </div>
+   <h1>{{.Name}}</h1>
+   {{if .HasReduce}}
+   <p>Prix : {{.Price}}</p>
+    <p>Nouveaux Prix : {{.ReducePrice}}</p>
+    {{end}}
+    <a href="/product?{{.Id}}">Voir le produit</a>
+    <img src="{{.PathImage}}" alt="Image produit">
+    {{end}}
+</main>
+    
+</body>
+
+</html>
+{{end}}
